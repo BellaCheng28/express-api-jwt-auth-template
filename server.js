@@ -19,6 +19,10 @@ app.use("/users", usersRouter);
 // Routes go here
 app.use("/profiles", profilesRouter);
 
+app.get('/',(req,res)=>{
+  res.json({"message":"hello"})
+})
+
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
