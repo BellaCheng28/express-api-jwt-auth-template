@@ -16,11 +16,13 @@ mongoose.connection.on("connected", () => {
 
 app.use(express.json());
 app.use(
-  cors({
-    origin: "http://localhost:5173", // 前端地址
-    methods: ["GET", "POST", "PUT", "DELETE"], // 允许的请求方法
-    allowedHeaders: ["Content-Type", "Authorization"], // 允许的请求头
-  })
+  cors('*'
+    //{
+    // origin: "http://localhost:5173", // 前端地址
+    // methods: ["GET", "POST", "PUT", "DELETE"], // 允许的请求方法
+    // allowedHeaders: ["Content-Type", "Authorization"], // 允许的请求头
+  //}
+)
 );
 app.use("/test-jwt", testJWTRouter);
 app.use("/users", usersRouter);
